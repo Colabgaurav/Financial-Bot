@@ -1,0 +1,9 @@
+streamlit
+selenium
+html-table-parser-python3
+beautifulsoup4
+pandas
+groq
+pdfkit
+python-dotenv
+openai
