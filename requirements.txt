@@ -7,3 +7,5 @@ groq
 pdfkit
 python-dotenv
 openai
+seaborn
+matplotlib
