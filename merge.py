@@ -14,10 +14,10 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Initialize Groq client with your API key
-GROQ_API_KEY = st.secrets["GROQ_API_KEY"] # Replace with your actual API key
+GROQ_API_KEY = st.secrets["groq_api_key"] # Replace with your actual API key
 client = Groq(api_key=GROQ_API_KEY)
 
-openai.api_key = st.secrets["GPT_API_KEY"]
+openai.api_key = st.secrets["gpt_api_key"]
 model_name = "gpt-4o-mini"
 temperature = 0.0
 
