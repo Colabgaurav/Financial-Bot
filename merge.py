@@ -1,5 +1,4 @@
 import streamlit as st
-from fastapi import HTTPException
 from selenium import webdriver
 from html_table_parser.parser import HTMLTableParser
 from bs4 import BeautifulSoup
