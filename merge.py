@@ -10,6 +10,7 @@ import os
 import re
 import openai
 from dotenv import load_dotenv
+from webdriver_manager.chrome import ChromeDriverManager
 
 load_dotenv()
 
@@ -38,6 +39,7 @@ def read_csv_as_string(file_path):
 
 # Define function to scrape news data
 def scrape_news_data(org: str, url: str):
+    driver = webdriver.Chrome(ChromeDriverManager().install())
     options = webdriver.ChromeOptions()
     options.add_argument('--headless')
     options.add_argument("--ignore-certificate-errors")
@@ -129,6 +131,7 @@ def scrape_news_data(org: str, url: str):
     driver.quit()
     
 def scrape_quantitative_data(org: str, url: str):
+    driver = webdriver.Chrome(ChromeDriverManager().install())
     options = webdriver.ChromeOptions()
     options.add_argument('--headless')
     options.add_argument("--ignore-certificate-errors")
