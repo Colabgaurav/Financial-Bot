@@ -15,10 +15,10 @@ from webdriver_manager.chrome import ChromeDriverManager
 load_dotenv()
 
 # Initialize Groq client with your API key
-GROQ_API_KEY = st.secrets["GROQ_API_KEY"] # Replace with your actual API key
+GROQ_API_KEY = os.getenv("GROQ_API_KEY") # Replace with your actual API key
 client = Groq(api_key=GROQ_API_KEY)
 
-openai.api_key = st.secrets["GPT_API_KEY"]
+openai.api_key = os.getenv("GPT_API_KEY")
 model_name = "gpt-4o-mini"
 temperature = 0.0
 
