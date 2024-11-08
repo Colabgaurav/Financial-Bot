@@ -15,10 +15,10 @@ from webdriver_manager.chrome import ChromeDriverManager
 load_dotenv()
 
 # Initialize Groq client with your API key
-GROQ_API_KEY = os.getenv("GROQ_API_KEY") # Replace with your actual API key
+GROQ_API_KEY = st.secrets["GROQ_API_KEY"] # Replace with your actual API key
 client = Groq(api_key=GROQ_API_KEY)
 
-openai.api_key = os.getenv("GPT_API_KEY")
+openai.api_key = st.secrets["GPT_API_KEY"]
 model_name = "gpt-4o-mini"
 temperature = 0.0
 
@@ -39,7 +39,6 @@ def read_csv_as_string(file_path):
 
 # Define function to scrape news data
 def scrape_news_data(org: str, url: str):
-    driver = webdriver.Chrome(ChromeDriverManager().install())
     options = webdriver.ChromeOptions()
     options.add_argument('--headless')
     options.add_argument("--ignore-certificate-errors")
@@ -131,7 +130,6 @@ def scrape_news_data(org: str, url: str):
     driver.quit()
     
 def scrape_quantitative_data(org: str, url: str):
-    driver = webdriver.Chrome(ChromeDriverManager().install())
     options = webdriver.ChromeOptions()
     options.add_argument('--headless')
     options.add_argument("--ignore-certificate-errors")
